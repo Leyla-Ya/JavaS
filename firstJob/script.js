@@ -1,38 +1,46 @@
-// 1. Напиши программу, которая использует цикл for, чтобы вывести числа от 1 до 10;
+// Задание 1:
 
-console.log('Вывод чисел от 1 до 10: ');
+const str = "JavaScript is fun!";
 
-for (let i = 1; i <= 10; i++) {
-    console.log(i);
-} 
+console.log(str.includes("fun"));
 
-// 2. Напиши программу, которая использует цикл while, чтобы посчитать сумму чисел от 1 до 100;
 
-let sum = 0;
-let i = 1;
+// Задание 5:
 
-while (i <= 100) {
-  sum += i;
-  i++;
-}
+const result = 1 + '1';
 
-console.log('Сумма чисел: ' + sum);
+console.log(result); // 11 - JavaScript автоматически преобразует типы данных 
+// (там, где это получается). 
+// В нашем случае число преобразовано в строку, 
+// так как один из операндов - строка и использовали оператор "+". 
 
-// 3. Выведи в консоль все простые числа от 0 до 100.
 
-console.log('Простые числа: ');
+// Задание 4:
 
-for (let num = 2; num <= 100; num++) {
-    let isPrime = true;
+console.log(null == undefined); // Как я поняла это: при не строгом сравнении
+// сравниваются только значения, т.е null - пустое значение, так и undefined - "пустота",
+// поэтому они считаются равными друг другу и вывод true.
+console.log(null === undefined); // При строгом же сравнении сравнивается больше данных, 
+// начиная от определения типа: тип null - это Null (Object), тип undefined - это Undefined.
+// Типы разные - false.
 
-    for (let i = 2; i <= Math.sqrt(num); i++) {
-        if (num % i === 0) {
-            isPrime = false;
-            break;
-        }
-    }
-    
-    if (isPrime) {
-        console.log(num);
-    }
-}
+
+// Задание 3:
+
+const firstName = "John";
+const lastName = "Doe";
+const occupation = "software developer";
+const message = `Hello, my name is ${firstName} ${lastName}. I am a ${occupation}.`;
+
+console.log(message);
+
+// Задание 2:
+
+let name = null;
+
+if (name === null) {
+    console.log("Пользователь не найден.");
+} else {
+    console.log("Добавьте больше данных.")
+} // Не знаю, правильно ли я поняла задачу, но тут вроде как переменная имеет
+// одно из false значений, и условие написала так, что сразу выполнится.
