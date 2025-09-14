@@ -1,83 +1,72 @@
-// Задание 1:
+// 1:
 
-const someNumbers = [3, 4, 6, 11];
-const square = someNumbers.map(item => item * item);
-
-console.log(square);
-
-
-// Задание 2:
-
-const array = [1, 2, 2, 3, 4, 5, 5, 5, 6];
-const newArray = array.filter((item, index) => array.indexOf(item) === index);
-
-console.log(newArray); // [1, 2, 3, 4, 5, 6]
-
-
-// Задание 3:
-
-const numbers = [2, 8, 5];
-const sum = numbers.reduce((total, num) => total + num, 0);
-
-console.log(sum); 
-
-
-// Задание 4:
-
-function reverseArray(arr) {
-    let reversed = [];
-
-    for (let i = arr.length - 1; i >= 0; i--) {
-        reversed.push(arr[i]);
-    }
-    return reversed;
+function sum(...numbers) {
+    return numbers.reduce((acc, num) => acc + num, 0);
 }
 
-const fruitsArray = ['Груша', 'Банан', 'Арбуз', 'Слива', 'Ананас'];
-console.log(fruitsArray);
-
-const reversed = reverseArray(fruitsArray);
-console.log(reversed); 
+console.log(sum(5, 9, 3, 11, 23));
 
 
-// Задание 5:
+// 2:
 
-let variableLet = 'Гарри Поттер.';
-const variableConst = 'Властелин колец.';
+const { name, age, country, ...rest } = { 
+  name: 'Leyla', 
+  surname: 'Yakubova', 
+  age: 32, 
+  country: 'Russia',
+  job: 'unemployed', 
+  hobby: 'sew'
+  };
 
-variableLet = 'Harry Potter.'; // let - переменная, которую можно менять.
-variableConst; // variableConst = ''  - при присваивании нового значения выдает ошибку.
-// const - постоянное значение (константа), поэтому перезапись значения недопустима.
-
-console.log(variableLet);
-console.log(variableConst); 
+console.log(name, age, country); 
+console.log(rest);
 
 
-let booksName = ['Гарри Поттер', 'Властелин колец', 'Сумерки'];
-const filmsName = ['Чужой', 'Обитель зла', 'Джон Уик'];
+// 3:
 
-let booksNew = booksName.splice(2,2, 'Парфюмер', 'Мешок с костями');
+const person = {
+  nameUser: 'Ivan',
+  year: 2002,
+  address: {
+    city: 'Moscow',
+    street: 'University'
+  },
+  work: {
+    firstJob: 'manager',
+    secondJob: 'barista'
+  }
+};
+const { nameUser, year, address: { city, street }, 
+  work: { firstJob, secondJob} } = person;
 
-console.log(booksName);
+console.log(nameUser, city, secondJob);
 
-let booksNew1 = booksName.forEach((bookName, index) => {
-    console.log(`${bookName}: ${index}`)
-})
 
-const filmsNew = filmsName.push('Мгла');
+// 4:
 
-console.log(filmsName);
-console.log(filmsNew);
+const fruits = ['apple', 'oring', 'banana'];
+const copiedFruits = [...fruits];
 
-const filmsNew1 = filmsName.map(filmName => `${filmName} - ${'Просмотрено'}`);
+copiedFruits.unshift('watermelon');
+copiedFruits.push('cherry');
 
-console.log(filmsNew1);
+console.log(copiedFruits);
 
-const films = filmsName.slice(2);
 
-console.log(filmsName);
-console.log(films);
-// Здесь же const не "ломается", потому что мы не меняем значение,
-// а лишь дополняем. так как массив ссылочный тип данных, мы обращаемся к ссылке, 
-// где хранятся данные массива и добавляем туда нужные нам данные не перезаписывая 
-// массив по новому.
+// 5:
+
+function removeProperty(obj, propertyToRemove) {
+  const { [propertyToRemove]: removedProperty, ...rest } = obj;
+  return rest;
+}
+
+const user = {
+  name: "Алекс",
+  age: 20,
+  city: "Москва",
+  email: "alex@example.com"
+};
+
+const userAge = removeProperty(user, 'age');
+console.log(userAge);
+
