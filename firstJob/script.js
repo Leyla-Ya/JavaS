@@ -61,7 +61,7 @@ function findMinMax(numbers) {
 }
 
 console.log(findMinMax([5]));
-console.log(findMinMax([4, 7, 2, 9, 8])); */
+console.log(findMinMax([4, 7, 2, 9, 8])); 
 
 
 // Задание 5:
