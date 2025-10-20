@@ -8,14 +8,8 @@ function hasEvenNumber(arr) {
 
     if (arr[i] % 2 === 0) {
 
-      foundEven = true;
-
-      break;
+      foundEven = true; 
       
-    } else if (arr[i] % 2 !== 0) {
-
-      foundEven = false;
-
     }
 
   }
