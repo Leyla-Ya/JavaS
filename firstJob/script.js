@@ -1,63 +1,21 @@
-// задача 1:
-
-function hasEvenNumber(arr) {
-
-  let foundEven = false;
-
-  for (let i = 0; i < arr.length; i++) {
-
-    if (arr[i] % 2 === 0) {
-
-      foundEven = true; 
-      
-    }
-
-  }
-
-  return foundEven;
-
+const aboutMe = {
+  name: 'Лейла',
+  age: 33,
+  hobby: ['Велопрогулки', 'Художественные книги', 'Прокрастинация']
 }
 
-console.log(hasEvenNumber([1, 3, 4, 5]));
+console.log(aboutMe.name, aboutMe.age);
+console.log(aboutMe['hobby']);
 
+aboutMe.address = 'Махачкала, ул. 26';
+console.log(aboutMe['address']);
 
-// задача 2:
+aboutMe['hobby'] = ['Прогулки', 'Художественные книги', 'Финансы'];
+console.log(aboutMe.hobby);
 
-function calculateAverage(numbers) {
+delete aboutMe.age;
+console.log(aboutMe['age']);
+console.log(aboutMe.age);
 
-  let sum = 0;
-
-  for (let i = 0; i < numbers.length; i++) { 
-
-    sum += numbers[i];
-
-  }
-
-  return sum / numbers.length;
-
-}
-
-console.log(calculateAverage([2, 4, 6]));
-
-
-// задача 3:
-
-function findLargestNumber(arr) {
-
-  let largest = arr[0];
-
-  for (let i = 0; i < arr.length; i++) {
-
-    if (arr[i] > largest) {
-
-      largest = arr[i];
-
-    }
-
-  }
-
-  return largest;
-
-}
-
-console.log(findLargestNumber([-10, -20, -30]));
+console.log(aboutMe.name, aboutMe.address);
+console.log(aboutMe['hobby']);
